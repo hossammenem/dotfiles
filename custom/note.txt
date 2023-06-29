@@ -1,0 +1,1 @@
+I'm using nvchad with their default setup, and this is just the custom file for the lsps that I've installed, and just in case I changed any of nvchad's keybinds

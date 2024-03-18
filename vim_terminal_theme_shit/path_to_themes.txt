@@ -1,0 +1,1 @@
+/home/hossammenem/.local/share/nvim/lazy/base46/lua/base46/themes

@@ -10,7 +10,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin:~/go/bin
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting alacritty-shell)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,6 +107,24 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+copyFileContent() {
+    if [ -z "$1" ]; then
+        echo "Usage: copyfilepath <file_name>"
+    else
+        xclip -selection clipboard < $1
+        echo "Content of $1 copied to clipboard"
+    fi
+}
+
+copyFilePath() {
+    if [ -z "$1" ]; then
+        echo "Usage: copyfilepath <file_name>"
+    else
+        realpath "$1" | xclip -selection clipboard
+        echo "Full path of $1 copied to clipboard"
+    fi
+}
 
 # Aliases
 alias lla='ls -la'
@@ -116,6 +134,10 @@ alias b='cd ..'
 alias cl='clear'
 alias CP='cd /mnt/brogramming/'
 alias home='cd ~'
+alias dtop='cd ~/Desktop/'
+alias me="cd ~/Desktop/me/"
+alias cfc=copyFileContent
+alias cfp=copyFilePath
+alias syncbg='~/Desktop/vim_terminal_theme_shit/sync_terminal_bg_with_vim.sh &'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh. [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

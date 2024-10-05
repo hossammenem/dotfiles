@@ -1,1 +1,0 @@
-/home/hossammenem/.config/nvim/lua/custom

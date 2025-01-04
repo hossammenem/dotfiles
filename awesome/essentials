@@ -1,0 +1,25 @@
+- resize from sides [X]
+- better mod+mouse resize (stick to one angle ) [X]
+( diagonal with sides [X] focus on resize [X] min size)
+
+- cylce with keyboard stutter [X] (
+cycle first to last error index
+)
+- vsync, screen tearing, audio maybe? bg, keybinds for apps like screen shot and other shit, performance
+(PERFORMANCE) [X]
+
+- bg [X]
+- tiling dragging shit better [X]
+( move maximzed windows ) [X]
+
+- keybinds for layout change, and tiling shit [X]
+(and minimized rule, [X]
+and minimized button) [X]
+
+- different app runner ngl ( most simple one ) ... just reconfigured rofi [X]
+- tag cycle thingy [X]
+- screenshot [X]
+- topbar ricing  [X]
+
+- that new line thing when copying in linux
+- vim and terminal theme

@@ -1,0 +1,77 @@
+
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Control", chars = "\u001BF" },
+  { key = "Left",  mods = "Control", chars = "\u001BB" },
+]
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.cursor]
+cursor = "0xc5c8c6"
+text = "0x1d1f21"
+
+[colors.normal]
+black = "0x1d1f21"
+blue = "0x81a2be"
+cyan = "0x8abeb7"
+green = "0xb5bd68"
+magenta = "0xb294bb"
+red = "0xcc6666"
+white = "0xc5c8c6"
+yellow = "0xf0c674"
+
+[colors.primary]
+background = '#282828' # '#16181a' # '#161616'
+foreground = "0xc5c8c6"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[debug]
+log_level = "OFF"
+persistent_logging = false
+print_events = false
+render_timer = false
+
+[font]
+size = 12.0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = false
+
+[scrolling]
+history = 1000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+dynamic_padding = false
+
+[window.padding]
+x = 10
+y = 10
+
+[general]
+live_config_reload = true

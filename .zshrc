@@ -1,22 +1,24 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/anaconda3/bin:$PATH:/home/longassarchad/Downloads/zen/
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin:~/go/bin
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# these all look almost the same: gozilla, edvardm, awesomepanda, robbyrussell, jbergantine
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,7 +80,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting alacritty-shell)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+bindkey '5;5u' forward-word
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+
 copyFileContent() {
     if [ -z "$1" ]; then
         echo "Usage: copyfilepath <file_name>"
@@ -131,13 +134,41 @@ alias lla='ls -la'
 alias vim='nvim'
 alias rmd='rm -rf'
 alias b='cd ..'
-alias cl='clear'
-alias CP='cd /mnt/brogramming/'
 alias home='cd ~'
 alias dtop='cd ~/Desktop/'
 alias me="cd ~/Desktop/me/"
+alias notes='cd ~/Desktop/notes/'
+alias booksnshit='cd ~/Desktop/booksnshit/'
 alias cfc=copyFileContent
 alias cfp=copyFilePath
-alias syncbg='~/Desktop/vim_terminal_theme_shit/sync_terminal_bg_with_vim.sh &'
+alias initValut='cp -r ~/Desktop/notes/base/.* ./; cp -r ~/Desktop/notes/base/* ./'
+alias syncNotes='notes; git add .; git commit -m "sync"; git push; popd'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh. [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/longassarchad/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/longassarchad/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/longassarchad/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/longassarchad/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# bun completions
+[ -s "/home/longassarchad/.bun/_bun" ] && source "/home/longassarchad/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+[ -f "/home/longassarchad/.ghcup/env" ] && . "/home/longassarchad/.ghcup/env" # ghcup-env

@@ -1,0 +1,36 @@
+# base
+gtk-titlebar = false
+theme = Afterglow
+cursor-style = block
+
+# shell
+shell-integration = detect
+shell-integration-features = no-cursor,sudo,no-title
+
+# mouse
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 1
+mouse-shift-capture = true
+
+# clipboard
+copy-on-select = clipboard
+clipboard-read = allow
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+
+# font
+font-size = 13 
+font-family = JetBrainsMono Nerd Font
+font-style = Bold
+font-style-italic = Bold Italic
+
+# window padding
+window-padding-x = 2 
+window-padding-y = 2
+window-padding-balance = true 
+
+# keybinds
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = shift+insert=paste_from_selection
+keybind = ctrl+shift+r=reload_config
+keybind = ctrl+a=toggle_tab_overview

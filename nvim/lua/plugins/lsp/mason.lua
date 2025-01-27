@@ -18,7 +18,7 @@ return {
 		})
 
 		mason_lspconfig.setup({ 
-			ensure_installed = { "lua_ls", "tsserver", "html", "tailwindcss", "cssls", "emmet_ls" },
+			ensure_installed = { "lua_ls", "ts_ls", "html", "tailwindcss", "cssls", "emmet_ls" },
 			automatic_installation = true,
 		})
 	end,

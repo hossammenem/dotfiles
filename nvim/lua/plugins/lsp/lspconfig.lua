@@ -10,7 +10,7 @@ return {
 
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		lspconfig['tsserver'].setup {
+		lspconfig['ts_ls'].setup {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			filetypes = {"typescript", "javascript", "typescript.tsx", "javascript.jsx", "typescriptreact", "javascriptreact"}
